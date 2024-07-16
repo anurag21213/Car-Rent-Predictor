@@ -31,20 +31,6 @@ app.post('/predict', async (req, res) => {
         console.log('Response:', response.data);
         res.send(response.data)
 
-        // if (Array.isArray(response.data) && response.data.length > 0) {
-        //     const responseData = response.data[0];
-
-        //     if (responseData.size_explain) {
-        //         const sizeExplain = JSON.parse(responseData.size_explain);
-        //         const predictedValue = sizeExplain.predicted_value;
-
-        //         res.json({ predicted_value: predictedValue });
-        //     } else {
-        //         throw new Error('size_explain not found in response');
-        //     }
-        // } else {
-        //     throw new Error('Empty or unexpected response format');
-        // }
     } catch (error) {
         console.error('Error:', error.message);
         res.status(500).json({ error: 'Internal Server Error' });
